@@ -1,0 +1,109 @@
+<!-- pages/vips.html -->
+<section id="vips">
+  <div class="tipos-reporte-container">
+    <h2>⭐ Sistema de Gestión VIPs</h2>
+    <p class="descripcion">Gestión de clientes prioritarios - Pega los datos separados por TAB o comas</p>
+
+    <!-- TABS DE NAVEGACIÓN -->
+    <div class="tabs-navigation">
+      <button class="tab-btn active" data-tab="vip-ufinet">🛜 VIP UFINET</button>
+      <button class="tab-btn" data-tab="vip-amazon">☁️ VIP AMAZON & AT&T</button>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TAB 1: VIP UFINET -->
+    <!-- ============================================ -->
+    <div class="tab-content active" data-content="vip-ufinet">
+      <div class="archivos-container">
+        <h3 style="margin: 0 0 15px 0; color: var(--primary);">VIP UFINET</h3>
+        
+        <div class="input-box">
+          <textarea id="vips-ufinet-input" rows="3" placeholder="Pega aquí el texto separado por TAB o comas (8 campos: No. Ticket, ID, Cliente Ufinet, Cliente Final, N1 Asignado, Causa, Avance, Bandwidth CRM)"></textarea>
+        </div>
+
+        <div id="vips-ufinet-preview" class="preview-horizontal">
+          <div class="preview-celda"><div class="titulo-celda">No. de Ticket</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">ID</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Cliente Ufinet</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Cliente Final</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">N1 Asignado</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Causa</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Avance</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Bandwidth CRM</div><div class="valor-celda"></div></div>
+        </div>
+
+        <div class="button-group">
+          <button id="btn-vips-ufinet-load">📝 Llenar Formulario</button>
+          <button id="btn-vips-ufinet-clear">🗑️ Borrar Texto</button>
+          <button id="btn-vips-ufinet-copiar">📋 Copiar Tabla</button>
+        </div>
+
+        <div class="contenido-flex">
+          <table class="tabla-formato" id="vips-ufinet-tabla">
+            <tr><th>No. de Ticket</th><td></td></tr>
+            <tr><th>ID</th><td></td></tr>
+            <tr><th>Cliente Ufinet</th><td></td></tr>
+            <tr><th>Cliente Final</th><td></td></tr>
+            <tr><th>N1 Asignado</th><td></td></tr>
+            <tr><th>Causa</th><td></td></tr>
+            <tr><th>Avance</th><td></td></tr>
+            <tr><th>Bandwidth CRM</th><td></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TAB 3: VIP AMAZON -->
+    <!-- ============================================ -->
+    <div class="tab-content" data-content="vip-amazon">
+      <div class="archivos-container">
+        <h3 style="margin: 0 0 15px 0; color: var(--primary);">☁️ REPORTES VIP AMAZON</h3>
+        
+        <div class="input-box">
+          <textarea id="vips-amazon-input" rows="3" placeholder="Pega aquí el texto separado por TAB o comas (10 campos: No. Ticket, ID, Cliente Ufinet, Cliente Final, Torre Asignado, Causa, Avances, Bandwidth CRM, Origen, Ticket Interno)"></textarea>
+        </div>
+
+        <div id="vips-amazon-preview" class="preview-horizontal">
+          <div class="preview-celda"><div class="titulo-celda">No. de Ticket</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">ID</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Cliente Ufinet</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Cliente Final</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Origen Reporte</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">No. Ticket Interno</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">N1 Asignado</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Causa</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Avance</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Bandwith CRM</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Red Offnet</div><div class="valor-celda"></div></div>
+          <div class="preview-celda"><div class="titulo-celda">Proveedor</div><div class="valor-celda"></div></div>
+        </div>
+
+        <div class="button-group">
+          <button id="btn-vips-amazon-load">📝 Llenar Formulario</button>
+          <button id="btn-vips-amazon-clear">🗑️ Borrar Texto</button>
+          <button id="btn-vips-amazon-copiar">📋 Copiar Tabla</button>
+        </div>
+
+        <div class="contenido-flex">
+          <table class="tabla-formato" id="vips-amazon-tabla">
+            <tr><th>No. de Ticket</th><td></td></tr>
+            <tr><th>ID</th><td></td></tr>
+            <tr><th>Cliente Ufinet</th><td></td></tr>
+            <tr><th>Cliente Final</th><td></td></tr>
+            <tr><th>Origen Reporte</th><td></td></tr>
+            <tr><th>No. Ticket Interno</th><td></td></tr>
+            <tr><th>N1 Asignado</th><td></td></tr>
+            <tr><th>Causa</th><td></td></tr>
+            <tr><th>Avance</th><td></td></tr>
+            <tr><th>Bandwith CRM</th><td></td></tr>
+            <tr><th>Red Offnet</th><td></td></tr>
+             <tr><th>Ticket Interno</th><td></td></tr>
+            <tr><th>Proveedor</th><td></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
