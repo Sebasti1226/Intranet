@@ -724,299 +724,63 @@ En seguimiento a su petición, le informamos que los accesos han sido autorizado
 <!-- ===================================================== -->
 <!-- TAB: LLAMADAS DE PRUEBA LATAM -->
 <!-- ===================================================== -->
+
 <div class="tab-content" data-content="llamadas">
 
-  <div class="llamadas-layout">
+  <section class="llamadas-container" id="llamadas">
 
-    <!-- ================================================= -->
-    <!-- PANEL LATERAL – NÚMEROS DE PRUEBA -->
-    <!-- ================================================= -->
-    <aside class="panel-numeros">
-      <h4>📞 Números de Prueba</h4>
-      <ul class="lista-numeros">
-        <li>
-          <span class="pais">Guatemala (Cabecera)</span>
-          <span class="numero-copiable" data-numero="950223173380">🇬🇹 (Cabecera): 950223173380</span>
-        </li>
-        <li>
-          <span class="pais">EUA</span>
-          <span class="numero-copiable" data-numero="918885441008">🇺🇸: 918885441008</span>
-        </li>
-        <li>
-          <span class="pais">GUATEMALA</span>
-          <span class="numero-copiable" data-numero="950223173333">🇬🇹: 950223173333</span>
-        </li>
-        <li>
-          <span class="pais">EL SALVADOR</span>
-          <span class="numero-copiable" data-numero="950322736750">🇸🇻: 950322736750</span>
-        </li>
-        <li>
-          <span class="pais">HONDURAS</span>
-          <span class="numero-copiable" data-numero="950422710262">🇭🇳: 950422710262</span>
-        </li>
-        <li>
-          <span class="pais">COSTA RICA</span>
-          <span class="numero-copiable" data-numero="950641070333">🇨🇷: 950641070333</span>
-        </li>
-        <li>
-          <span class="pais">PANAMA</span>
-          <span class="numero-copiable" data-numero="95073760101">🇵🇦: 95073760101</span>
-        </li>
-        <li>
-          <span class="pais">COLOMBIA</span>
-          <span class="numero-copiable" data-numero="95753860750">🇨🇴: 95753860750</span>
-        </li>
-        <li>
-          <span class="pais">COLOMBIA ALTERNO</span>
-          <span class="numero-copiable" data-numero="9576017448604">COA: 9576017448604</span>
-        </li>
-        <li>
-          <span class="pais">COL LINEA GRATUITA</span>
-          <span class="numero-copiable" data-numero="95701 8000 910 091">🇨🇴 GRATUITA: 95701 8000 910 091</span>
-        </li>
-        <li>
-          <span class="pais">ECUADOR</span>
-          <span class="numero-copiable" data-numero="9593969640618">🇪🇨: 9593969640618</span>
-        </li>
-        <li>
-          <span class="pais">PERU</span>
-          <span class="numero-copiable" data-numero="95117027124">🇵🇪: 95117027124</span>
-        </li>
-        <li>
-          <span class="pais">MEXICO</span>
-          <span class="numero-copiable" data-numero="9527224810879">🇲🇽: 9527224810879</span>
-        </li>
-        <li>
-          <span class="pais">PARAGUAY</span>
-          <span class="numero-copiable" data-numero="9595 (21) 658 7000">🇵🇾: 9595 (21) 658 7000</span>
-        </li>
-        <li>
-          <span class="pais">PARAGUAY TEISA</span>
-          <span class="numero-copiable" data-numero="9595 (21) 658 7632">🇵🇾: 9595 (21) 658 7632</span>
-        </li>
-        <li>
-          <span class="pais">ARGENTINA</span>
-          <span class="numero-copiable" data-numero="9541152352900">🇵🇾: 9541152352900</span>
-        </li>
-        <li>
-          <span class="pais">CHILE</span>
-          <span class="numero-copiable" data-numero="956228920150">🇨🇱: 956228920150</span>
-        </li>
-          <h2>Linea Reico</h2>
-              <li>
-          <span class="pais">REICO</span>
-          <span class="numero-copiable" data-numero="950641070380">🇨🇷: 950641070380</span>
-              </li>
+    <h2>📞 Llamadas de Prueba</h2>
 
-              <h2>CEC</h2>
-              <li>
-          <span class="pais">GUATEMALA</span>
-          <span class="numero-copiable" data-numero="9502 2317 3366">🇬🇹: 9502 2317 3366</span>
-              </li>
-                <li>
-          <span class="pais">COSTA RICA</span>
-          <span class="numero-copiable" data-numero="9506 4107 0366">🇨🇷: 9506 4107 0366</span>
-              </li>
-                <li>
-          <span class="pais">PANAMA</span>
-          <span class="numero-copiable" data-numero="9507 376 0166">🇵🇦: 9507 376 0166</span>
-              </li>
-                <li>
-          <span class="pais">COLOMBIA</span>
-          <span class="numero-copiable" data-numero="957 53860766">🇨🇴: 957 53860766</span>
-              </li>
-              <li>
-          <span class="pais">HONDURAS</span>
-          <span class="numero-copiable" data-numero="950425441079">🇭🇳: 950425441079</span>
-              </li>
-              <li>
-          <span class="pais">EL SALVADOR</span>
-          <span class="numero-copiable" data-numero="950321367863 ">🇸🇻: 950321367863 </span>
-              </li>
-      </ul>        
-    </aside>
+    <div class="acciones">
+      <button id="btn-llamadas-copy" class="btn success">📋 Copiar Excel</button>
+      <button id="btn-llamadas-image" class="btn image">📸 Copiar Imagen</button>
+      <button id="btn-llamadas-clear" class="btn danger">🗑️ Limpiar Resultados</button>
+    </div>
 
-    <!-- ================================================= -->
-    <!-- CONTENIDO PRINCIPAL -->
-    <!-- ================================================= -->
-    <section class="llamadas-main">
+    <div class="tabla-wrapper" id="tabla-llamadas">
+      <table class="tabla-llamadas">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>País</th>
+            <th>Número</th>
+            <th>Resultado</th>
+            <th>Observación</th>
+          </tr>
+        </thead>
+        <tbody id="llamadas-body">
+          <tr>
+            <td>1</td>
+            <td class="pais fixed">CO - Colombia</td>
+            <td class="numero fixed" data-numero="6011234567">6011234567</td>
+            <td contenteditable></td>
+            <td contenteditable></td>
+          </tr>
 
-      <!-- ================= BOTONES ================= -->
-      <div class="llamadas-actions compact">
-        <button id="btn-copiar-tabla-llamadas" class="btn-action primary">
-          📋 Copiar Tabla
-        </button>
-        <button id="btn-limpiar-llamadas" class="btn-action secondary">
-          🗑️ Limpiar
-        </button>
-      </div>
-
-      <!-- ================= TABLA RESULTADOS ================= -->
-      <div class="tabla-llamadas-wrapper">
-
-        <table class="tabla-llamadas">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>PAÍS</th>
-              <th>RESULTADO</th>
-              <th>OBSERVACIONES</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Guatemala (Cabecera)</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>EUA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>GUATEMALA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>EL SALVADOR</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>HONDURAS</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>COSTA RICA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>PANAMA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>8</td>
-            <td>COLOMBIA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>9</td>
-            <td>COLOMBIA ALTERNO</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>10</td>
-            <td>COL LINEA GRATUITA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>11</td>
-            <td>ECUADOR</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>12</td>
-              <td>PERU</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>13</td>
-            <td>MEXICO</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>14</td>
-            <td>PARAGUAY</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>15</td>
-            <td>PARAGUAY TEISA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>16</td>
-            <td>ARGENTINA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>17</td>
-              <td>CHILE</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-
-           <thead>
-            <tr>
-              <th>No</th>
-              <th>LINEA REICO</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <td>1</td>
-           <td>REICO</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>CEC</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <td>1</td>
-           <td>GUATEMALA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
+          <tr>
             <td>2</td>
-              <td>COSTA RICA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
+            <td class="pais fixed">CO - Colombia</td>
+            <td class="numero fixed" data-numero="6017654321">6017654321</td>
+            <td contenteditable></td>
+            <td contenteditable></td>
+          </tr>
+
+          <tr>
             <td>3</td>
-              <td>PANAMA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>4</td>
-              <td>COLOMBIA</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>5</td>
-              <td>HONDURAS</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-            <td>6</td>
-              <td>EL SALVADOR</td>
-              <td contenteditable class="celda-editable">ok</td>
-              <td contenteditable class="celda-editable observaciones"></td>
-            </tr>
-          </tbody>
-        </table>
+            <td class="pais fixed">MX - México</td>
+            <td class="numero fixed" data-numero="5512345678">5512345678</td>
+            <td contenteditable></td>
+            <td contenteditable></td>
+          </tr>
 
-      </div>
-    </section>
+        </tbody>
+      </table>
+    </div>
 
-  </div>
+  </section>
+
 </div>
+
 
 
     <!-- ============================================ -->
