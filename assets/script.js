@@ -589,7 +589,6 @@ function initVips() {
         "vip-cliente-final",
         "vip-n1",
         "vip-causa",
-        "vip-avance",
         "vip-bandwidth"
       ]
     },
@@ -1758,3 +1757,4 @@ btnClear.onclick = () => {
   console.log("✅ Módulo Tipos de Reporte (completo) inicializado");
 }
 }
+
