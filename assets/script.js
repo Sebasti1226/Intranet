@@ -1225,10 +1225,58 @@ function setupScriptsJS() {
   const output = document.getElementById("scriptOutput");
   const copyBtn = document.getElementById("copyBtn");
   const idiomaSelect = document.getElementById("scripts-idioma");
+  const buscarInput = document.getElementById("buscar-script");
+  const clearBtn = document.getElementById("clear-search");
 
   if (!output || !copyBtn || optionCards.length === 0) {
     console.warn("⚠️ Elementos del módulo Scripts no encontrados");
     return;
+  }
+
+  // ========================================================
+  // LÓGICA DE FILTRADO Y BOTÓN "X"
+  // ========================================================
+  if (buscarInput && clearBtn) {
+    const filtrarScripts = (termino) => {
+      const term = termino.toLowerCase().trim();
+      const titulosSecciones = document.querySelectorAll(".dropdown-container h3");
+
+      clearBtn.style.display = term.length > 0 ? "block" : "none";
+
+      optionCards.forEach(card => {
+        const textoBoton = card.textContent.toLowerCase();
+        const valorData = card.getAttribute("data-value").toLowerCase();
+
+        if (textoBoton.includes(term) || valorData.includes(term)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      titulosSecciones.forEach(titulo => {
+        if (titulo.textContent !== "Scripts de Soporte") {
+          let tieneVisibles = false;
+          let hermano = titulo.nextElementSibling;
+          while (hermano && hermano.tagName !== 'H3') {
+            if (hermano.classList.contains('option-card') && hermano.style.display !== 'none') {
+              tieneVisibles = true;
+              break;
+            }
+            hermano = hermano.nextElementSibling;
+          }
+          titulo.style.display = tieneVisibles || term === "" ? "block" : "none";
+        }
+      });
+    };
+
+    buscarInput.addEventListener("input", (e) => filtrarScripts(e.target.value));
+
+    clearBtn.addEventListener("click", () => {
+      buscarInput.value = "";
+      filtrarScripts("");
+      buscarInput.focus();
+    });
   }
 
   const textos = {
@@ -1320,7 +1368,7 @@ function setupScriptsJS() {
       suspendido: `<p>Prezado cliente, agradecemos a sua comunicação. Ao validar em nosso sistema, detectamos que o ID IDIDIDIDID encontra-se atualmente em estado Suspenso. Por favor, entre em contato com a área de Cobrança.</p>`
     }
   };
-
+// --- Lógica de clics en las tarjetas ---
   optionCards.forEach(card => {
     card.addEventListener("click", () => {
       optionCards.forEach(c => c.classList.remove("active"));
@@ -1331,19 +1379,26 @@ function setupScriptsJS() {
     });
   });
 
+  // --- Actualizar texto al cambiar idioma ---
   idiomaSelect.addEventListener("change", () => {
     const cardActivo = document.querySelector(".option-card.active");
     if (cardActivo) {
       const valor = cardActivo.getAttribute("data-value");
-      output.innerHTML = textos[idiomaSelect.value][valor] || "<p>Texto no definido.</p>";
+      const idioma = idiomaSelect.value;
+      output.innerHTML = textos[idioma][valor] || "<p>Texto no definido.</p>";
     }
   });
 
+  // --- Botón de copiar ---
   copyBtn.addEventListener("click", () => {
     const textoFormateado = convertirHTMLaTexto(output.innerHTML);
-    navigator.clipboard.writeText(textoFormateado).then(() => alert("Texto copiado al portapapeles ✅"));
+    navigator.clipboard.writeText(textoFormateado)
+      .then(() => alert("Texto copiado al portapapeles ✅"))
+      .catch(() => alert("Error al copiar al portapapeles"));
   });
-}
+
+  console.log("✅ Módulo Scripts actualizado con búsqueda e idiomas");
+} // <-- Este cierre es fundamental para finalizar la función setupScriptsJS
 
 
 // ==================== UTILIDAD: Convertir HTML a texto plano ====================
