@@ -1190,7 +1190,57 @@ body.dark #visor-pdf-wrapper {
   outline-offset: 2px;
 }
 
+/* ==================== BUSCADOR SCRIPTS ==================== */
+.search-container {
+  position: relative;
+  margin-bottom: 20px; /* Separación con las categorías */
+  width: 100%;
+}
 
+#buscar-script {
+  width: 100%;
+  padding: 12px 35px 12px 15px; /* Espacio derecho para la X */
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-input);
+  color: var(--text);
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#buscar-script:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb, 52, 152, 219), 0.2); /* Efecto de foco sutil */
+}
+
+#buscar-script::placeholder {
+  color: var(--text);
+  opacity: 0.6;
+}
+
+#clear-search {
+  display: none; /* Se controla desde el JS */
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1;
+  padding: 5px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+#clear-search:hover {
+  opacity: 1;
+  color: #e74c3c; /* Un tono rojo sutil al pasar el mouse */
+}
 
 /* ==================== MÓDULO: TIPOS DE REPORTE (COMPLETO) ==================== */
 
