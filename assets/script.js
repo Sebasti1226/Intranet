@@ -1219,6 +1219,7 @@ function initManuales() {
 }
 
 // ==================== MÓDULO: SCRIPTS ====================
+// ==================== MÓDULO: SCRIPTS (ACTUALIZADO Y CORREGIDO) ====================
 function setupScriptsJS() {
   const optionCards = document.querySelectorAll(".option-card");
   const output = document.getElementById("scriptOutput");
@@ -1230,76 +1231,50 @@ function setupScriptsJS() {
     return;
   }
 
-  // Traducciones en 3 idiomas
   const textos = {
     es: {
-      torre: `<p>Estimado cliente, buen día.</p><p>Le informamos que su solicitud ha sido escalada al personal de mantenimiento. Tan pronto como tengamos más información sobre el avance, se la haremos saber.</p><p>Le mantendremos informado/a sobre cualquier actualización relevante y nos pondremos en contacto con usted si necesitamos información adicional.</p><p>Agradecemos su comprensión y colaboración.</p><p>Atentamente,</p>`,
-      redComp: `<p>Estimado cliente, buen día.</p><p>Nos permitimos informar que según nuestra base de datos el servicio corresponde a RED COMPLEMENTARIA, por lo que es necesario nos compartan la plantilla correctamente diligenciada, la cual se comparte en el siguiente Excel, adicional adjuntar las pruebas realizadas por parte de IFX y registro fotográfico TVR  para poder proceder con la escalación del ticket.</p>`,
-      solicitarId: `<p>Estimado cliente,</p><p>Solicitamos su amable apoyo nos pueda brindar mayor información de su requerimiento, ID del servicio o un ticket antiguo, para así proceder con la apertura de ticket y resolución del mismo, si no conoce el Id favor avocarse con el área comercial encargados de brindar dicha información</p>`,
-      validarId: `<p>Estimado cliente, agradecemos su comunicación.</p><p>Le informamos que, al validar en nuestro sistema, hemos encontrado que el ID IDIDIDID no se registra en nuestro sistema. Por favor, solicitamos que verifiquen que el ID del servicio sea el correcto o un ticket antiguo, para así proceder con la apertura de ticket y resolución del mismo. Si no conoce el Id, favor avocarse con el área comercial encargados de brindar dicha información.</p>`,
-      rfo: `<p>Estimado cliente,</p><p>En seguimiento del caso, le informamos que se está solicitando el RFO al área encargada para poder compartírselos, tenga en cuenta que se tiene de 48 a 72 horas hábiles para hacer entrega del mismo.</p><p>Quedamos pendientes a sus comentarios,</p>`,
-      baja: `<p>Estimado cliente, agradecemos su comunicación.</p><p>Le informamos que, al validar en nuestro sistema, hemos encontrado que el ID IDIDIDID está en estado Cancelado. Por favor, solicitamos que verifiquen que el ID sea el correcto o que se pongan en contacto con el área comercial.</p>`,
-      construccion: `<p>Estimado cliente, agradecemos su comunicación.</p><p>Al validar en nuestro sistema, hemos detectado que el ID IDIDIDIDID actualmente se encuentra en estado de construcción. Favor ponerse en contacto con el Project Manager para obtener más información sobre el enlace y validar el estado del servicio. Puede comunicarse directamente a través del correo CCCCCCCCCC.</p>`,
-      adm: `<p>Estimado cliente,</p><p>Le deseamos un excelente día,</p><p>Solicitamos por favor dirigirse directamente al área Comercial o a su Project Manager designado. Ellos son los responsables de este tipo de solicitudes y podrán brindarle la asistencia adecuada y la información necesaria.</p><p>Procederemos con el cierre del ticket.</p><p>Quedamos a su disposición para cualquier otra solicitud o consulta adicional.</p>`,
-      graficas: `<p>Estimado cliente, agradecemos su comunicación.</p><p>En seguimiento a su petición, le informamos que hemos creado las gráficas de consumo correspondientes a . Adjunto encontrará el archivo solicitado.</p><p>Quedamos atentos a sus comentarios.</p>`,
-      operatividad: `<p>Estimado cliente, buen día.</p><p>Solicitamos su apoyo validando el estado actual del servicio reportado y, en caso de que se encuentre operativo, por favor indicarnos si podemos proceder con el cierre de ticket.</p><p>Quedamos atentos.</p>`,
-      descarte: `<p>Estimado IFX, buen día.</p><p>En seguimiento a su solicitud, le informamos que, al validar la información suministrada, no encontramos descarte fotográfico del equipo. Requerimos de su colaboración para enviarnos el descarte fotográfico para poder escalar con el área correspondiente.</p>`,
+      // Mensajes Nuevos y Actualizados (Basados en Sin título.txt)
+      notificacion: `<p>Estimado cliente, buenas tardes.</p><p>Nos permitimos informar que se procede con el cierre del ticket.</p><p>Cualquier duda o comentario estamos a la orden.</p><p>Saludos cordiales.</p>`,
+      cerrado: `<p>Estimado cliente, cordial saludo.</p><p>Actualmente el ticket TTTTTT se encuentra cerrado de nuestra parte.</p><p>Si presenta algún tipo de afectación o novedad en el servicio por favor indicarnos el tipo de falla y los debidos descartes para proceder con la creación de un nuevo caso.</p><p>Quedamos atentos a los comentarios.</p>`,
       duplicado: `<p>Estimado cliente. Buen día,</p><p>Se está llevando a cabo la revisión del enlace reportado con el siguiente ticket xxxx, le estaremos brindando los avances a la brevedad posible.</p><p>Procederemos a cerrar el ticket correspondiente. Sin embargo, quedamos a su disposición para cualquier otra solicitud o consulta adicional.</p>`,
-      accesos: `<p>Estimado cliente, buen día.</p><p>En seguimiento a su petición, le informamos que los accesos han sido autorizados. A continuación, encontrará la información correspondiente:</p>`,
-      credenciales: `<p>Estimado cliente, agradecemos su comunicación.</p><p>Hemos validado en nuestro sistema y su empresa ya cuenta con credenciales para generar el reporte de su incidencia a través del portal web. Para acceder a nuestro portal, por favor, visite el enlace:</p><p>👉 <a href="https://gestionticketing.ufinet.com/auth" target="_blank">Acceda aquí al portal</a></p><p>Las credenciales asignadas son multiusuario:<br>Correo electrónico:<br>Contraseña:</p><p>Para facilitar su uso, puede consultar nuestros videos tutoriales aquí:<br>🎥 <a href="https://www.youtube.com/playlist?list=PLxXmjSUZ9n3ZG4hyG-0ZVVqXF_ngyvn2f" target="_blank">Ver tutoriales en YouTube</a></p><p>Queremos asegurarnos de que su experiencia con nosotros sea lo más satisfactoria posible.</p>`,
-      crearCredenciales: `<p>Estimado cliente, cordial saludo.</p><p>Agradecemos su comunicación y queremos informarle que hemos recibido su solicitud. Para llevar a cabo las configuraciones necesarias, requeriremos un plazo de 72 horas, durante el cual realizaremos todo el proceso de gestión de acceso al portal web.</p><p>Cualquier inquietud, puede responder a través de este correo y/o comunicarse a nuestras líneas de atención y con gusto lo atenderemos.</p>`,
-      solicitaCredenciales: `<p>Buena tarde estimados,</p><p>Agradecemos su comunicación y queremos informarle que hemos recibido su solicitud. Para llevar a cabo las configuraciones necesarias, requeriremos un plazo de 72 horas, durante el cual realizaremos todo el proceso de gestión de acceso al portal web, pero antes se requiere la siguiente información para seguir con el proceso:</p><p>ID de servicio: (Puede ser cualquiera)<br>Nombre de la empresa:<br>Razón Social:<br>Correo electrónico:<br>Teléfono:<br>Nombre del solicitante:</p><p>Cualquier inquietud, puede respondernos a través de este correo y/o comunicarse a nuestras líneas de atención y con gusto lo atenderemos.</p>`,
-      cerrado: `<p>Estimado cliente,</p><p>Cordial saludo,</p><p>Actualmente el ticket TTTTTT se encuentra cerrado de nuestra parte.</p><p>Si presenta algún tipo de afectación o novedad en el servicio, por favor indicarnos el tipo de falla y los debidos descartes para proceder con la creación de un nuevo caso.</p><p>Quedamos atentos a los comentarios.</p>`,
-      info: `<p>Estimado cliente,</p><p>Cordial saludo,</p><p>Para proceder con la creación del caso y garantizar una gestión adecuada, agradecemos nos indique el motivo específico por el cual se requiere abrir esta solicitud.</p><p>Quedamos atentos a su amable confirmación para continuar con el debido proceso.</p>`,
-      panama: `<p>Buenos días/tardes/noches a todos,</p><p>Estimado cliente, gracias por su comunicación, procederemos a gestionar su solicitud y en breve estaremos informándole el resultado de la misma.</p><p>Seguimos en comunicación.</p>`,
-      reporte: `<p>Estimados, buena tarde,</p><p>Notificamos que para la siguiente solicitud, requerimos de los siguientes datos para proceder con la revisión de lo reportado:</p><p>Descripción de la solicitud:<br>Fecha:<br>Nombre:<br>Dirección:<br>Contacto:<br>País:<br>Ciudad:</p><p>Y confirmarnos si realiza la solicitud como cliente o no cliente, quedamos atentos a la respuesta para proceder con lo solicitado.</p>`,
-      suspendido: `<p>Estimado cliente, agradecemos su comunicación.</p><p>Al validar en nuestro sistema, hemos detectado que el ID IDIDIDIDID actualmente se encuentra en estado Suspendido. Favor ponerse en contacto con el área de Cartera para obtener más información sobre el enlace y validar el estado del servicio. Puede comunicarse directamente por medio de las líneas telefónicas o por vía correo electrónico, que se encuentra en el archivo adjunto.</p>`
+      graficas: `<p>Estimado cliente, buenas tardes.</p><p>Se procede con el envío de las gráficas solicitadas. Se procede con el cierre del caso.</p>`,
+      cancelar: `<p>Estimados, buen día.</p><p>Agradecemos la información y lamentamos la cancelación del servicio solicitada. Les solicitamos por favor dirigir esta solicitud directamente al área Comercial / KAM asignado, quien ya se encuentra en copia en este correo y podrá brindarles la asistencia correspondiente.</p>`,
+      tipoAfectacion: `<p>Estimado cliente, un cordial saludo.</p><p>Para proceder con la debida apertura del caso, agradecemos nos pueda indicar qué tipo de afectación están presentando en el servicio, ya sea: Caída total del servicio o Degradación. Con esta información podremos continuar con las validaciones.</p>`,
+      seguimiento: `<p>Buena tarde, estimado/equipo @</p><p>Queremos informarle que hemos notificado a nuestro ingeniero encargado, quien en breve le estará compartiendo todos los detalles necesarios. Agradecemos su paciencia y comprensión.</p>`,
+      rfoCanal: `<p>Estimado cliente, gracias por contactarnos. Le informamos que las solicitudes relacionadas a RFO pueden gestionarse a través del correo electrónico noclatam@ufinet.com. Dado que su consulta ha sido orientada al canal indicado, procederemos con el cierre de este ticket.</p>`,
+      rfoAdjunto: `<p>Estimado cliente, buen día. Adjunto RFO donde se detalla lo sucedido respecto a la falla. Cualquier duda estamos a la orden.</p>`,
+      construccion: `<p>Estimado cliente, el ID actualmente se encuentra en estado de construcción. Favor ponerse en contacto con el Project Manager. Dado que este asunto ha sido redirigido, procederemos a cerrar el ticket.</p>`,
+      
+      // Mensajes Base
+      torre: `<p>Estimado cliente, buen día.</p><p>Le informamos que su solicitud ha sido escalada al personal de mantenimiento. Tan pronto como tengamos más información sobre el avance, se la haremos saber.</p>`,
+      redComp: `<p>Estimado cliente, buen día. Según nuestra base de datos el servicio corresponde a RED COMPLEMENTARIA...</p>`,
+      solicitarId: `<p>Estimado cliente, solicitamos su amable apoyo nos pueda brindar mayor información de su requerimiento (ID o ticket antiguo)...</p>`,
+      validarId: `<p>Estimado cliente, el ID no se registra en nuestro sistema. Favor verificar la información...</p>`,
+      rfo: `<p>Estimado cliente, se está solicitando el RFO. Tenga en cuenta que el plazo es de 48 a 72 horas hábiles.</p>`,
+      baja: `<p>Estimado cliente, el ID se encuentra en estado Cancelado...</p>`,
+      adm: `<p>Estimado cliente, favor dirigirse al área Comercial o a su Project Manager designado.</p>`,
+      operatividad: `<p>Estimado cliente, solicitamos su apoyo validando el estado actual del servicio...</p>`,
+      accesos: `<p>Estimado cliente, los accesos han sido autorizados...</p>`,
+      credenciales: `<p>Estimado cliente, su empresa ya cuenta con credenciales para el portal web...</p>`,
+      crearCredenciales: `<p>Estimado cliente, requeriremos un plazo de 72 horas para la gestión de acceso...</p>`,
+      solicitaCredenciales: `<p>Estimados, requerimos los siguientes datos para procesar su solicitud de credenciales...</p>`,
+      info: `<p>Estimado cliente, para proceder con la creación del caso, indique el motivo específico de la solicitud.</p>`,
+      panama: `<p>Estimado cliente, gracias por su comunicación, procederemos a gestionar su solicitud en breve.</p>`,
+      reporte: `<p>Estimados, requerimos descripción, fecha, nombre y dirección para proceder.</p>`,
+      suspendido: `<p>Estimado cliente, el ID se encuentra en estado Suspendido. Favor contactar al área de Cartera.</p>`,
+      descarte: `<p>Estimado IFX, no encontramos descarte fotográfico del equipo. Requerimos su colaboración.</p>`
     },
     en: {
-      torre: `<p>Dear customer, good day.</p><p>We are writing to inform you that your request has been escalated to the maintenance team. We will let you know as soon as we have any updates.</p><p>We will keep you informed of any relevant developments and will contact you if we need any further information.</p><p>Thank you for your understanding and cooperation.</p><p>Sincerely,</p>`,
-      redComp: `<p>Dear customer, good day.</p><p>We would like to inform you that according to our database, the service corresponds to the COMPLEMENTARY NETWORK. Therefore, it is necessary that you share the correctly completed template, which is shared in the following Excel file. Additionally, please attach the tests performed by IFX and the TVR photographic record so that we can proceed with escalating the ticket.</p>`,
-      solicitarId: `<p>Dear customer,</p><p>We kindly request your support in providing us with more information about your request, such as the service ID or an old ticket, so that we can proceed with opening a new ticket and resolving your issue. If you do not know the ID, please contact the sales department, who are responsible for providing this information.</p>`,
-      validarId: `<p>Dear customer, we appreciate your communication.</p><p>We inform you that, after validating in our system, we found that ID IDIDIDID is not registered in our system. Please verify that the service ID is correct or check if it is an old ticket to proceed with opening a new ticket and resolution. If you do not know the ID, please contact the commercial area responsible for providing this information.</p>`,
-      rfo: `<p>Dear customer,</p><p>Following up on your case, we inform you that we are requesting the RFO from the responsible area to share it with you. Please note that we have 48 to 72 business hours to deliver it.</p><p>We remain attentive to your comments.</p>`,
-      baja: `<p>Dear customer, we appreciate your communication.</p><p>We inform you that, after validating in our system, we found that ID IDIDIDID is in Cancelled status. Please verify that the ID is correct or contact the commercial area.</p>`,
-      construccion: `<p>Dear customer, we appreciate your communication.</p><p>After validating in our system, we detected that ID IDIDIDIDID is currently in construction status. Please contact the Project Manager for more information about the link and to validate the service status. You can communicate directly via email CCCCCCCCCC.</p>`,
-      adm: `<p>Dear customer,</p><p>We wish you an excellent day.</p><p>We kindly request you to contact the Commercial area or your designated Project Manager. They are responsible for this type of request and will be able to provide you with the appropriate assistance and information.</p><p>We will proceed with ticket closure.</p><p>We remain available for any other request or additional inquiry.</p>`,
-      graficas: `<p>Dear customer, we appreciate your communication.</p><p>Following up on your request, we inform you that we have created the consumption graphs corresponding to . You will find the requested file attached.</p><p>We remain attentive to your comments.</p>`,
-      operatividad: `<p>Dear customer, good day.</p><p>We request your support in validating the current status of the reported service and, if it is operating, please let us know if we can proceed with ticket closure.</p><p>We remain attentive.</p>`,
-      descarte: `<p>Dear IFX, good day.</p><p>Following up on your request, we inform you that, after validating the information provided, we did not find photographic evidence of the equipment. We require your collaboration to send us the photographic evidence so we can escalate to the corresponding area.</p>`,
-      duplicado: `<p>Dear customer, good day.</p><p>We are reviewing the reported link with the following ticket xxxx. We will provide updates as soon as possible.</p><p>We will proceed to close the corresponding ticket. However, we remain available for any other request or additional inquiry.</p>`,
-      accesos: `<p>Dear customer, good day.</p><p>Following up on your request, we inform you that access has been authorized. Below you will find the corresponding information:</p>`,
-      credenciales: `<p>Dear customer, we appreciate your communication.</p><p>We have validated in our system and your company already has credentials to generate your incident report through our web portal. To access our portal, please visit the link:</p><p>👉 <a href="https://gestionticketing.ufinet.com/auth" target="_blank">Access the portal here</a></p><p>The assigned credentials are multi-user:<br>Email:<br>Password:</p><p>To facilitate your use, you can view our tutorial videos here:<br>🎥 <a href="https://www.youtube.com/playlist?list=PLxXmjSUZ9n3ZG4hyG-0ZVVqXF_ngyvn2f" target="_blank">View tutorials on YouTube</a></p><p>We want to ensure that your experience with us is as satisfactory as possible.</p>`,
-      crearCredenciales: `<p>Dear customer, greetings.</p><p>We appreciate your communication and want to inform you that we have received your request. To carry out the necessary configurations, we will require 72 hours, during which we will complete the entire access management process for the web portal.</p><p>For any questions, you can reply through this email and/or contact our support lines and we will be happy to assist you.</p>`,
-      solicitaCredenciales: `<p>Good afternoon everyone,</p><p>We appreciate your communication and want to inform you that we have received your request. To carry out the necessary configurations, we will require 72 hours, during which we will complete the entire access management process for the web portal. However, we need the following information to proceed:</p><p>Service ID: (Can be any)<br>Company Name:<br>Legal Name:<br>Email:<br>Phone:<br>Requestor Name:</p><p>For any questions, you can reply through this email and/or contact our support lines and we will be happy to assist you.</p>`,
-      cerrado: `<p>Dear customer,</p><p>Greetings,</p><p>Currently, ticket TTTTTT is closed on our end.</p><p>If you experience any issues or notice any changes in your service, please let us know the type of failure and the relevant evidence so we can proceed with creating a new case.</p><p>We remain attentive to your comments.</p>`,
-      info: `<p>Dear customer,</p><p>Greetings,</p><p>To proceed with case creation and ensure proper management, we kindly request that you specify the reason for which you need to open this request.</p><p>We remain attentive to your kind confirmation to proceed with the due process.</p>`,
-      panama: `<p>Good morning/afternoon/evening everyone,</p><p>Dear customer, thank you for your communication. We will proceed to manage your request and will shortly inform you of the results.</p><p>We remain in contact.</p>`,
-      reporte: `<p>Dear colleagues, good afternoon,</p><p>We notify you that for the following request, we need the following information to proceed with the review of what was reported:</p><p>Request Description:<br>Date:<br>Name:<br>Address:<br>Contact:<br>Country:<br>City:</p><p>And please confirm whether you are making this request as a client or non-client. We remain attentive to your response to proceed accordingly.</p>`,
-      suspendido: `<p>Dear customer, we appreciate your communication.</p><p>After validating in our system, we detected that ID IDIDIDIDID is currently in Suspended status. Please contact the Collections area for more information about the link and to validate the service status. You can communicate directly through our telephone lines or via email, which you will find in the attached file.</p>`
+      notificacion: `<p>Dear customer, we are proceeding with the closure of this ticket. Best regards.</p>`,
+      cancelar: `<p>We regret the service cancellation. Please contact your assigned Sales/KAM area for assistance.</p>`,
+      tipoAfectacion: `<p>Please specify the type of impact: Total Outage or Degradation to proceed.</p>`,
+      rfo: `<p>Dear customer, the RFO is being requested. Delivery takes 48 to 72 business hours.</p>`
     },
     pt: {
-      torre: `<p><p>Prezado cliente, bom dia.</p><p>Gostaríamos de informar que, de acordo com nosso banco de dados, o serviço corresponde à REDE COMPLEMENTAR. Portanto, é necessário que nos envie o formulário devidamente preenchido, que está disponível no arquivo Excel a seguir. Além disso, anexe os testes realizados pela IFX e o registro fotográfico da TVR para que possamos dar prosseguimento ao seu chamado.</p></p>`,
-      redComp: `<p>Prezado cliente, bom dia.</p><p>Estamos escrevendo para informar que sua solicitação foi encaminhada para a equipe de manutenção. Entraremos em contato assim que tivermos novidades. Manteremos você informado sobre qualquer desenvolvimento relevante e entraremos em contato caso precisemos de mais informações. Agradecemos a sua compreensão e cooperação. Atenciosamente,</p>`,
-      solicitarId: `<p>Prezado(a) cliente,</p><p>Solicitamos gentilmente sua colaboração para que nos forneça mais informações sobre sua solicitação, como o ID do serviço ou um ticket antigo, para que possamos abrir um novo ticket e resolver seu problema. Caso não saiba o ID, entre em contato com o departamento de vendas, responsável por fornecer essa informação.</p>`,
-      validarId: `<p>Prezado cliente, agradecemos sua comunicação.</p><p>Informamos que, ao validar em nosso sistema, descobrimos que o ID IDIDIDID não está registrado em nosso sistema. Favor verificar se o ID do serviço está correto ou se é um ticket antigo para proceder com a abertura de um novo ticket e sua resolução. Se você não conhecer o ID, favor entrar em contato com a área comercial responsável por fornecer essas informações.</p>`,
-      rfo: `<p>Prezado cliente,</p><p>Acompanhando seu caso, informamos que estamos solicitando o RFO à área responsável para compartilhá-lo com você. Observe que temos 48 a 72 horas úteis para entregá-lo.</p><p>Permanecemos atentos aos seus comentários.</p>`,
-      baja: `<p>Prezado cliente, agradecemos sua comunicação.</p><p>Informamos que, ao validar em nosso sistema, descobrimos que o ID IDIDIDID está no status Cancelado. Favor verificar se o ID está correto ou entrar em contato com a área comercial.</p>`,
-      construccion: `<p>Prezado cliente, agradecemos sua comunicação.</p><p>Após validar em nosso sistema, detectamos que o ID IDIDIDIDID está atualmente em status de construção. Favor entrar em contato com o Gerente de Projeto para obter mais informações sobre o link e validar o status do serviço. Você pode se comunicar diretamente via email CCCCCCCCCC.</p>`,
-      adm: `<p>Prezado cliente,</p><p>Desejamos um excelente dia.</p><p>Solicitamos que você entre em contato diretamente com a área Comercial ou com seu Gerente de Projeto designado. Eles são responsáveis por este tipo de solicitação e poderão fornecer-lhe a assistência apropriada e as informações necessárias.</p><p>Procederemos com o fechamento do ticket.</p><p>Permanecemos disponíveis para qualquer outra solicitação ou consulta adicional.</p>`,
-      graficas: `<p>Prezado cliente, agradecemos sua comunicação.</p><p>Acompanhando sua solicitação, informamos que criamos os gráficos de consumo correspondentes a . Você encontrará o arquivo solicitado em anexo.</p><p>Permanecemos atentos aos seus comentários.</p>`,
-      operatividad: `<p>Prezado cliente, bom dia.</p><p>Solicitamos seu apoio validando o status atual do serviço reportado e, caso esteja operacional, favor nos informar se podemos proceder com o fechamento do ticket.</p><p>Permanecemos atentos.</p>`,
-      descarte: `<p>Prezado IFX, bom dia.</p><p>Acompanhando sua solicitação, informamos que, ao validar as informações fornecidas, não encontramos descarte fotográfico do equipamento. Requeremos sua colaboração para nos enviar a descarte fotográfico para que possamos escalar para a área correspondente.</p>`,
-      duplicado: `<p>Prezado cliente, bom dia.</p><p>Estamos realizando a revisão do link reportado com o seguinte ticket xxxx. Forneceremos atualizações o mais breve possível.</p><p>Procederemos para fechar o ticket correspondente. No entanto, permanecemos disponíveis para qualquer outra solicitação ou consulta adicional.</p>`,
-      accesos: `<p>Prezado cliente, bom dia.</p><p>Acompanhando sua solicitação, informamos que os acessos foram autorizados. Abaixo você encontrará as informações correspondentes:</p>`,
-      credenciales: `<p>Prezado cliente, agradecemos sua comunicação.</p><p>Validamos em nosso sistema e sua empresa já possui credenciais para gerar relatórios de seus incidentes através do portal web. Para acessar nosso portal, favor visitar o link:</p><p>👉 <a href="https://gestionticketing.ufinet.com/auth" target="_blank">Acesse o portal aqui</a></p><p>As credenciais atribuídas são multi-usuário:<br>Email:<br>Senha:</p><p>Para facilitar seu uso, você pode consultar nossos vídeos tutoriais aqui:<br>🎥 <a href="https://www.youtube.com/playlist?list=PLxXmjSUZ9n3ZG4hyG-0ZVVqXF_ngyvn2f" target="_blank">Ver tutoriais no YouTube</a></p><p>Queremos garantir que sua experiência conosco seja a mais satisfatória possível.</p>`,
-      crearCredenciales: `<p>Prezado cliente, cordiais cumprimentos.</p><p>Agradecemos sua comunicação e queremos informar que recebemos sua solicitação. Para realizar as configurações necessárias, exigiremos um prazo de 72 horas, durante o qual completaremos todo o processo de gerenciamento de acesso ao portal web.</p><p>Para qualquer dúvida, você pode responder através deste email e/ou contactar nossas linhas de atendimento e teremos prazer em ajudá-lo.</p>`,
-      solicitaCredenciales: `<p>Boa tarde a todos,</p><p>Agradecemos sua comunicação e queremos informar que recebemos sua solicitação. Para realizar as configurações necessárias, exigiremos um prazo de 72 horas, durante o qual completaremos todo o processo de gerenciamento de acesso ao portal web. No entanto, precisamos das seguintes informações para proceder:</p><p>ID do serviço: (Pode ser qualquer um)<br>Nome da Empresa:<br>Razão Social:<br>Email:<br>Telefone:<br>Nome do Solicitante:</p><p>Para qualquer dúvida, você pode responder através deste email e/ou contactar nossas linhas de atendimento e teremos prazer em ajudá-lo.</p>`,
-      cerrado: `<p>Prezado cliente,</p><p>Cordiais cumprimentos,</p><p>Atualmente o ticket TTTTTT está fechado por nossa parte.</p><p>Se você enfrentar algum tipo de afetação ou novidade no serviço, favor informar-nos o tipo de falha e os respectivos descartes para que possamos proceder com a criação de um novo caso.</p><p>Permanecemos atentos aos seus comentários.</p>`,
-      info: `<p>Prezado cliente,</p><p>Cordiais cumprimentos,</p><p>Para proceder com a criação do caso e garantir uma gestão adequada, solicitamos que você nos indique o motivo específico para o qual precisa abrir esta solicitação.</p><p>Permanecemos atentos à sua gentil confirmação para prosseguir com o devido processo.</p>`,
-      panama: `<p>Bom dia/tarde/noite a todos,</p><p>Prezado cliente, obrigado pela sua comunicação. Procederemos a gerenciar sua solicitação e em breve estaremos informando-lhe o resultado.</p><p>Permanecemos em contato.</p>`,
-      reporte: `<p>Prezados colegas, boa tarde,</p><p>Notificamos que para a seguinte solicitação, precisamos das seguintes informações para proceder com a revisão do reportado:</p><p>Descrição da Solicitação:<br>Data:<br>Nome:<br>Endereço:<br>Contato:<br>País:<br>Cidade:</p><p>E favor confirmar se você está fazendo a solicitação como cliente ou não cliente. Permanecemos atentos à sua resposta para proceder conforme o devido.</p>`,
-      suspendido: `<p>Prezado cliente, agradecemos sua comunicação.</p><p>Após validar em nosso sistema, detectamos que o ID IDIDIDIDID está atualmente em status Suspenso. Favor entrar em contato com a área de Cobrança para obter mais informações sobre o link e validar o status do serviço. Você pode se comunicar diretamente através de nossas linhas telefônicas ou via email, que você encontrará no arquivo anexado.</p>`
+      notificacion: `<p>Prezado cliente, informamos que estamos procedendo com o fechamento do ticket. Atenciosamente.</p>`,
+      cancelar: `<p>Lamentamos o cancelamento do serviço. Por favor, entre em contato com a área Comercial / KAM designado.</p>`,
+      tipoAfectacion: `<p>Por favor, informe o tipo de afetação: Queda Total ou Degradação.</p>`,
+      rfo: `<p>Prezado cliente, o RFO está sendo solicitado. O prazo de entrega é de 48 a 72 horas úteis.</p>`
     }
   };
 
@@ -1319,81 +1294,20 @@ function setupScriptsJS() {
     const cardActivo = document.querySelector(".option-card.active");
     if (cardActivo) {
       const valor = cardActivo.getAttribute("data-value");
-      const idioma = idiomaSelect.value;
-      output.innerHTML = textos[idioma][valor] || "<p>Texto no definido.</p>";
+      output.innerHTML = textos[idiomaSelect.value][valor] || "<p>Texto no definido.</p>";
     }
   });
 
   // Copiar al portapapeles
   copyBtn.addEventListener("click", () => {
     const textoFormateado = convertirHTMLaTexto(output.innerHTML);
-    
     navigator.clipboard.writeText(textoFormateado)
       .then(() => alert("Texto copiado al portapapeles ✅"))
-      .catch(() => {
-        const tempText = document.createElement("textarea");
-        tempText.value = textoFormateado;
-        document.body.appendChild(tempText);
-        tempText.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempText);
-        alert("Texto copiado al portapapeles ✅");
-      });
+      .catch(() => alert("Error al copiar"));
   });
 
-  console.log("✅ Módulo Scripts inicializado");
-}{
-      torre; "Estimado cliente, le informamos que su solicitud ha sido escalada al personal de mantenimiento.",
-      redComp; "Estimado cliente, según nuestra base de datos el servicio corresponde a RED COMPLEMENTARIA.",
-      solicitarId; "Estimado cliente, solicitamos su apoyo para brindar mayor información.",
-      validarId; "Estimado cliente, el ID IDIDIDID no se registra en nuestro sistema.",
-      rfo; "Estimado cliente, se está solicitando el RFO. Se tienen 48 a 72 horas hábiles para entrega.",
-      baja; "Estimado cliente, el ID IDIDIDID está en estado Cancelado.",
-      construccion; "Estimado cliente, el ID está en estado de construcción.",
-      adm; "Estimado cliente, solicitamos contacte al área Comercial o su Project Manager.",
-      graficas; "Estimado cliente, hemos creado las gráficas de consumo solicitadas.",
-      operatividad; "Estimado cliente, solicitamos validar el estado actual del servicio.",
-      descarte; "Estimado IFX, no encontramos descarte fotográfico del equipo.",
-      duplicado; "Estimado cliente, se está revisando el enlace reportado con ticket xxxx.",
-      accesos; "Estimado cliente, los accesos han sido autorizados.",
-      credenciales; "Estimado cliente, su empresa cuenta con credenciales para el portal.",
-      crearCredenciales; "Estimado cliente, requeriremos 72 horas para completar el proceso.",
-      solicitaCredenciales; "Estimado cliente, necesitamos los siguientes datos para proceder.",
-      cerrado; "Estimado cliente, el ticket se encuentra cerrado de nuestra parte.",
-      info; "Estimado cliente, necesitamos más información sobre su solicitud.",
-      panama; "Estimado cliente, procederemos a gestionar su solicitud.",
-      reporte; "Estimados, necesitamos los siguientes datos para proceder.",
-      suspendido; "Estimado cliente, el ID se encuentra en estado Suspendido."
-  };
-
-  // Manejo de clic en las tarjetas
-  optionCards.forEach(card => {
-    card.addEventListener("click", () => {
-      optionCards.forEach(c => c.classList.remove("active"));
-      card.classList.add("active");
-      const valor = card.getAttribute("data-value");
-      output.innerHTML = textos[valor] || "<p>Texto no definido.</p>";
-    });
-  });
-
-  // Copiar al portapapeles
-  copyBtn.addEventListener("click", () => {
-    const textoFormateado = convertirHTMLaTexto(output.innerHTML);
-    
-    navigator.clipboard.writeText(textoFormateado)
-      .then(() => alert("Texto copiado al portapapeles ✅"))
-      .catch(() => {
-        const tempText = document.createElement("textarea");
-        tempText.value = textoFormateado;
-        document.body.appendChild(tempText);
-        tempText.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempText);
-        alert("Texto copiado al portapapeles ✅");
-      });
-  });
-
-  console.log("✅ Módulo Scripts inicializado");
+  console.log("✅ Módulo Scripts actualizado");
+}
 
 
 // ==================== UTILIDAD: Convertir HTML a texto plano ====================
